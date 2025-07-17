@@ -21,8 +21,8 @@ export default function Home() {
             try {
                 const res = await fetch(`${API_URL}?lang=${lang}`);
                 if (!res.ok) throw new Error('API 호출 실패');
-                const data = await res.json();
-                setMessage(data.message);
+                const data = await res.text();
+                setMessage(data);
             } catch (error) {
                 setMessage('에러 발생: ' + (error as Error).message);
             }
