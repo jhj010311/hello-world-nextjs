@@ -7,7 +7,7 @@ export default function Home() {
     // useState -> select id="lang" value="(en/ko/jp 중에서 변화)"
 
     // api 주소 : NEXT_PUBLIC_API_URL + ?lang=(option)
-    // 최종형태 예시 : http://localhost:8080/greetings?lang=ko
+    // 최종형태 예시 : http://localhost:8080/greeting?lang=ko
 
     const [lang, setLang] = useState('en'); // 선택된 언어
     const [message, setMessage] = useState(''); // API 응답 메시지
@@ -19,7 +19,7 @@ export default function Home() {
 
         const fetchGreeting = async () => {
             try {
-                const res = await fetch(`${API_URL}?lang=${lang}`);
+                const res = await fetch(`/api/greeting?lang=${lang}`);
                 if (!res.ok) throw new Error('API 호출 실패');
                 const data = await res.text();
                 setMessage(data);
