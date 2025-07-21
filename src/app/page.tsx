@@ -37,7 +37,7 @@ export default function Home() {
         <div>
             <select value={lang} onChange={(e) => setLang(e.target.value)}>
                 <option value="en">en</option>
-                <option value="ko">ko</option>
+                <option value="kr">kr</option>
                 <option value="jp">jp</option>
             </select>
         </div>
